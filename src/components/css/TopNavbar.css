@@ -1,0 +1,51 @@
+#TopNavbar {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: transparent;
+  backdrop-filter: blur(6px);
+  color: #f80000;
+  z-index: 10;
+  height: 38px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+#TopNavbar .title {
+  font-size: xx-large;
+  font-weight: 900;
+}
+
+#TopNavbar .router-list{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#TopNavbar .router-list .list{
+  text-decoration: none;
+  margin: 5px;
+  color: #f80000;
+}
+
+#TopNavbar .auth{
+  display: flex;
+  margin-right: 20px;
+}
+
+#TopNavbar .auth .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  border-radius: 15px;
+  border: none;
+  padding: 2px;
+  width: 100px;
+  margin: 5px;
+  background-color: #f80000;
+}
