@@ -5,20 +5,20 @@ import Movie from '../../components/MovieCard'
 
 function Movies() {
 
-  const setUrl = process.env.REACT_APP_API
   const [movies, setMovies] = useState([])
 
-  const getMoviesAPI = () => {
-    Axios.get(`${setUrl}/v1/movies`)
-    .then((response) => {
-      setMovies(response.data.data)      
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }
-
   useEffect(() => {
+    const setUrl = process.env.REACT_APP_API
+    const getMoviesAPI = () => {
+      Axios.get(`${setUrl}/v1/movies`)
+      .then((response) => {
+        setMovies(response.data.data)      
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    }
+
     getMoviesAPI()
   }, [])
 
@@ -32,6 +32,7 @@ function Movies() {
               return (
                 <div key={key}>
                   <Movie 
+                    id={movie.id}
                     title={movie.name}
                     image={movie.image}
                     genre={movie.genre}

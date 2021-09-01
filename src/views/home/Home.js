@@ -14,7 +14,7 @@ const Home = () => {
           <h2>Here's the most watched movie for you</h2>
           <p>Spider-Man: Far From Home</p>
           <div>
-            <Link to='/' className="button">See detail</Link>
+            <Link to='/movie/4' className="button">See detail</Link>
             <span>| </span>
             <Link to='/movies' className="button">See more movies</Link>
           </div>

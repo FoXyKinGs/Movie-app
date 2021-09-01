@@ -1,5 +1,6 @@
 import React from 'react'
 import './css/MovieCard.css'
+import { Link } from 'react-router-dom'
 
 function MovieCard(props) {
 
@@ -16,7 +17,7 @@ function MovieCard(props) {
           <p>{props.synopsis}</p>
         </div>
       </div>
-      <button>Watch</button>
+      <Link to={`/movie/${props.id}`} className='button'>See detail</Link>
     </div>
   )
 }

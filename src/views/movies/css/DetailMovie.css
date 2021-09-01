@@ -1,0 +1,88 @@
+#DetailMovie {
+  box-sizing: border-box;
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+  padding: 78px 10px 10px 10px;
+  position: relative;
+}
+
+#DetailMovie .loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+}
+
+#DetailMovie .movie {
+  width: 100%;
+  height: calc(100vh - 88px);
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #e8e8e8;
+  border-radius: 15px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#DetailMovie .movie img {
+  width: 400px;
+  height: 100%;
+  border-radius: 15px;
+}
+
+#DetailMovie .movie .desc {
+  padding: 10px;
+  color: #fff;
+  margin-left: 15px;
+  position: relative;
+}
+
+#DetailMovie .movie .title {
+  font-size: xx-large;
+}
+
+#DetailMovie .movie .genre {
+  font-size: x-large;
+}
+
+#DetailMovie .movie .synopsis {
+  margin-top: 20px;
+  width: 100%;
+  height: calc(100% - 30vh);
+  overflow-y: auto;
+}
+
+#DetailMovie .movie .price {
+  font-size: xx-large;
+  margin-left: 10px;
+}
+
+#DetailMovie .movie .rating {
+  font-size: large;
+  background-color: rgba(255, 238, 0, 0.2);
+  border: 1px solid rgb(255, 238, 0);
+  border-radius: 5px;
+  padding: 2px;
+}
+
+#DetailMovie .movie .button-buy {
+  height: 40px;
+  width: 170px;
+  border: none;
+  border-radius: 5px;
+  font-size: x-large;
+  background-color: #f80000;
+  color: #fff;
+}
+
+#DetailMovie .movie .conf {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+}
