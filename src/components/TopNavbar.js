@@ -27,6 +27,7 @@ const TopNavbar = () => {
       <Link to="/" className="title">Movie Store</Link>
       <div className="router-list">
         <Link className="list" to='/'>Home</Link>
+        <Link className="list" to='/movies'>Movies</Link>
       </div>
       {
         global.token ?

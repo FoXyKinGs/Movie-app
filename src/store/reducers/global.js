@@ -1,5 +1,5 @@
 const initialState = {
-  token: null
+  token: null,
 }
 
 const globalReducers = (state = initialState, action) => {

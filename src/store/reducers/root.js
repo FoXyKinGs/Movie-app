@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import GlobalReducers from './global'
 
 const rootReducers = combineReducers({
-  globalReducers: GlobalReducers
+  globalReducers: GlobalReducers,
 })
 
 export default rootReducers

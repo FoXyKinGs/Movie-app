@@ -13,7 +13,11 @@ const Home = () => {
         <div className="billboard">
           <h2>Here's the most watched movie for you</h2>
           <p>Spider-Man: Far From Home</p>
-          <Link to='/' className="button">See more</Link>
+          <div>
+            <Link to='/' className="button">See detail</Link>
+            <span>| </span>
+            <Link to='/movies' className="button">See more movies</Link>
+          </div>
         </div>
         <div className="list-movie">
           <img src='images/smffh.jpeg' alt="Spider-Man: Far From Home, Poster"/>
