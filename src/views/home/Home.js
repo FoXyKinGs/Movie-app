@@ -9,14 +9,14 @@ const Home = () => {
         <h1>Watch your favorite movie everywhere</h1>
       </div>
       <div id="movies">
-        <img className="spidey" src="images/sm.png"/>
+        <img className="spidey" src="images/sm.png" alt="spider pict"/>
         <div className="billboard">
           <h2>Here's the most watched movie for you</h2>
-          <p>Spider-Man: Far For Home</p>
+          <p>Spider-Man: Far From Home</p>
           <Link to='/' className="button">See more</Link>
         </div>
         <div className="list-movie">
-          <img src='images/smffh.jpeg'/>
+          <img src='images/smffh.jpeg' alt="Spider-Man: Far From Home, Poster"/>
         </div>
       </div>
     </div>

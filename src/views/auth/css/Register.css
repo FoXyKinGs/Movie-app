@@ -1,3 +1,62 @@
 #Register {
+  position: relative;
+}
+
+#Register .background {
+  background: url('../../../assets/background.jpeg') no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  z-index: -1;
+  filter: brightness(0.3);
+  height: 100vh;
+  width: 100%;
+}
+
+#Register .form-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  transform: translate(-50%, 35%);
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 35px;
+}
+
+#Register .form-box h2 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+#Register .form-box input {
+  margin-top: 10px;
+  height: 50px;
+  width: 100%;
   padding: 10px;
+  border-radius: 5px;
+  background-color: #333333;
+  color: #e8e8e8;
+  box-sizing: border-box;
+  border: 1px solid #000000;
+}
+
+#Register .form-box button {
+  margin-top: 20px;
+  height: 50px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: #f80000;
+  color: #ffffff;
+  font-size: medium;
+}
+
+#Register p {
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+#Register p .prefer {
+  color: #ffffff;
 }
