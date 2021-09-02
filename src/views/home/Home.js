@@ -1,9 +1,8 @@
 import './css/Home.css'
 import { Link } from 'react-router-dom'
 import Axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useSelector } from 'react-redux'
-import { useCallback } from 'react'
 
 const Home = () => {
 

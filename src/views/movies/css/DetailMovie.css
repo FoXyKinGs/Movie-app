@@ -79,10 +79,26 @@
   font-size: x-large;
   background-color: #f80000;
   color: #fff;
+  cursor: pointer;
+}
+
+#DetailMovie .movie .watch-button {
+  height: 40px;
+  width: 170px;
+  border: 1px solid rgb(0, 255, 0);
+  border-radius: 5px;
+  font-size: x-large;
+  background-color: transparent;
+  color: rgb(0, 255, 0);
+  cursor: pointer;
 }
 
 #DetailMovie .movie .conf {
   display: flex;
   position: absolute;
   bottom: 10px;
+}
+
+#DetailMovie .movie .conf .purchase {
+  display: flex;
 }

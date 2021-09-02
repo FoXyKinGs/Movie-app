@@ -1,24 +1,52 @@
 import React from 'react'
 import './css/DetailMovie.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import Axios from 'axios'
 
 function DetailMovie() {
   
+  const global = useSelector(state => state.globalReducers)
+
   const setUrl = process.env.REACT_APP_API
   const [movie, setMovie] = useState([])
+  const [purchased, setPurchased] = useState([])
   const param = useParams()
   
   const rupiah = (value) => {
     return parseInt(value).toLocaleString('id-ID')
   }
 
+  const buyMovie = () => {
+    const result = {
+      id_user: global.id,
+      id_movie: param.id
+    }
+    Axios.post(`${setUrl}/v1/movie`, result, {headers: {auth: global.token}})
+    .then((response) => {
+      alert('Success')
+      purchasedMovie(global.token, param.id)
+    })
+    .catch((err) => {
+      alert('Login for buying')
+    })
+  }
+
+  const purchasedMovie = useCallback((username, movie) => {
+    Axios.get(`${setUrl}/v1/purchasedMovie?username=${username}&movie=${movie}`)
+    .then((response) => {
+      setPurchased(response.data)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  },[setUrl])
+
   useEffect(() => {
-    const url = setUrl
     const id = param.id
     const getDetailMovieAPI = () => {
-      Axios.get(`${url}/v1/movie/${id}`)
+      Axios.get(`${setUrl}/v1/movie/${id}`)
       .then((response) => {
         setMovie(response.data[0])
       })
@@ -26,9 +54,14 @@ function DetailMovie() {
         console.log(err)
       })
     }
-
     getDetailMovieAPI()
-  }, [param, setUrl])
+
+    if(global.token) {
+      purchasedMovie(global.token, param.id)
+    } else {
+      setPurchased([])
+    }
+  }, [global.token, param.id, setUrl, purchasedMovie])
 
   return (
     <div id="DetailMovie">
@@ -43,8 +76,18 @@ function DetailMovie() {
                 <p>{movie.synopsis}</p>
               </div>
               <div className='conf'>
-                <button className='button-buy'>Buy</button>
-                <p className='price'>IDR {rupiah(movie.price)}</p>
+                {
+                  purchased.length < 1 ? (
+                    <div className='purchase'>
+                      <button className='button-buy' onClick={() => buyMovie()}>Buy</button>
+                      <p className='price'>IDR {rupiah(movie.price)}</p>
+                    </div>
+                  ) : (
+                    <div>
+                      <button className='watch-button'>Watch</button>
+                    </div>
+                  )
+                }
               </div>
             </div>
           </div>
