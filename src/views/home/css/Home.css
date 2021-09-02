@@ -36,7 +36,7 @@
 #Home #membership .membership-box {
   box-sizing: border-box;
   padding: 10px;
-  width: 85%;
+  width: 95%;
   height: 95%;
   display: flex;
   justify-content: space-between;
@@ -83,13 +83,23 @@
   font-size: x-large;
 }
 
-#Home #membership .membership-box .silver .conv button {
+#Home #membership .membership-box .silver .conv button.subscribe {
   width: 100px;
   height: 30px;
   border: none;
   border-radius: 5px;
   background-color: #f80000;
   color: #fff;
+  cursor: pointer;
+}
+
+#Home #membership .membership-box .silver .conv button.subscribed {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #f80000;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #f80000;
 }
 
 #Home #membership .membership-box .platinum {
@@ -128,13 +138,23 @@
   font-size: x-large;
 }
 
-#Home #membership .membership-box .platinum .conv button {
+#Home #membership .membership-box .platinum .conv button.subscribe {
   width: 100px;
   height: 30px;
   border: none;
   border-radius: 5px;
   background-color: #f80000;
   color: #fff;
+  cursor: pointer;
+}
+
+#Home #membership .membership-box .platinum .conv button.subscribed {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #f80000;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #f80000;
 }
 
 #Home #membership .membership-box .bronze {
@@ -173,13 +193,23 @@
   font-size: x-large;
 }
 
-#Home #membership .membership-box .bronze .conv button {
+#Home #membership .membership-box .bronze .conv button.subscribe {
   width: 100px;
   height: 30px;
   border: none;
   border-radius: 5px;
   background-color: #f80000;
   color: #fff;
+  cursor: pointer;
+}
+
+#Home #membership .membership-box .bronze .conv button.subscribed {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #f80000;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #f80000;
 }
 
 #Home #movies {

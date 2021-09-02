@@ -24,7 +24,12 @@ const Login = () => {
           type: 'TOKEN_DATA',
           payload: response.data.username
         })
+        dispatch({
+          type: 'ID_DATA',
+          payload: response.data.id
+        })
         localStorage.setItem('token', response.data.username)
+        localStorage.setItem('id', response.data.id)
         setData({username: '', password: ''})
         alert('Login success')
         history.push('/')

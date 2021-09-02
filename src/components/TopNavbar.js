@@ -16,7 +16,12 @@ const TopNavbar = () => {
         type: 'TOKEN_DATA',
         payload: null
       })
+      dispatch({
+        type: 'ID_DATA',
+        payload: null
+      })
       localStorage.removeItem('token')
+      localStorage.removeItem('id')
       alert('Logout success')
     }
   }
