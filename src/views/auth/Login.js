@@ -2,23 +2,31 @@ import './css/Login.css'
 import { Link, useHistory } from 'react-router-dom'
 import { useState } from 'react'
 import Axios from 'axios'
+import { useDispatch } from 'react-redux'
 
 const Login = () => {
 
   const history = useHistory()
+  const dispatch = useDispatch()
   const setUrl = process.env.REACT_APP_API
 
   const [data, setData] = useState({
     username: '', password: ''
   })
 
+
   const onSubmit = (e) => {
     e.preventDefault()
     if(data.username && data.password){
       Axios.post(`${setUrl}/v1/login`, data)
       .then((response) => {
+        dispatch({
+          type: 'TOKEN_DATA',
+          payload: response.data.username
+        })
         localStorage.setItem('token', response.data.username)
         setData({username: '', password: ''})
+        alert('Login success')
         history.push('/')
       })
       .catch((err) => {

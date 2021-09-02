@@ -1,26 +1,29 @@
 import './css/TopNavbar.css'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { useState, useEffect } from 'react'
 
 const TopNavbar = () => {
 
+  const dispatch = useDispatch()
   const global = useSelector((state) => state.globalReducers)
-
-  const [boxOpen, setBoxOpen] = useState(false)
-
-  const triggerBoxOpen = (value) => {
-    setBoxOpen(value)
-  }
+  const [token, setToken] = useState(null)
 
   const actionLogOut = () => {
     let r = window.confirm('Are you sure want to log out?')
     if (r === true) {
+      dispatch({
+        type: 'TOKEN_DATA',
+        payload: null
+      })
       localStorage.removeItem('token')
-      triggerBoxOpen(false)
       alert('Logout success')
     }
   }
+
+  useEffect(() => {
+    setToken(global.token)
+  }, [global.token])
 
   return (
     <div id="TopNavbar">
@@ -30,19 +33,11 @@ const TopNavbar = () => {
         <Link className="list" to='/movies'>Movies</Link>
       </div>
       {
-        global.token ?
+        token ?
           (
             <div className="uname">
-              <p onClick={triggerBoxOpen(true)}>{global.token}</p>
-              <div>
-                {
-                  boxOpen ? (
-                    <div className="box-open">
-                      <button onClick={actionLogOut}>Log out</button>
-                    </div>
-                  ) : ''
-                }
-              </div>
+              <p>{token}</p>
+              <button onClick={actionLogOut}/>
             </div>
           ) :
         (

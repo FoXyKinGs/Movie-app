@@ -1,5 +1,5 @@
 const initialState = {
-  token: null,
+  token: null || localStorage.getItem('token'),
 }
 
 const globalReducers = (state = initialState, action) => {

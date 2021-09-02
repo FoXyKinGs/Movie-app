@@ -45,16 +45,23 @@
   color: #FFFFFF;
 }
 
-#TopNavbar .uname .box-open {
+#TopNavbar .uname button {
+  margin: 5px;
+  padding: 2px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: #f80000;
+  position: relative;
+}
+
+#TopNavbar .uname button::before {
+  content: 'O';
   position: absolute;
-  border: 1px solid #3f3f3f;
-  background-color: rgba(0, 0, 0, 0.5);
-  right: 40px;
-  bottom: -65%;
-  width: 100px;
-  padding: 10px; 
-  box-sizing: border-box;
-  border-radius: 5px;
+  top: 0;
+  left: 3px;
 }
 
 #TopNavbar .auth .button {
